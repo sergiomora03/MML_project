@@ -104,5 +104,5 @@ class HAM10000_Dataset(Dataset):
         image = imread(image_file)
         image = self.toTensor(image)
 
-        return {'data': image, 'target': lesion_class}
+        return image, lesion_class
 
