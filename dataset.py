@@ -48,7 +48,7 @@ for row, (lesion_name,images_id) in enumerate(lesion_groups):
         ax.set_yticks([])
 
 plt.tight_layout()
-fig.savefig('lesion_examples.png', dpi=300)
+fig.savefig('img/lesion_examples.png', dpi=300)
 
 # Plot some histograms to caracterize the data
 plt.style.use('seaborn')
@@ -58,28 +58,28 @@ lesion = df_data['lesion_type'].value_counts()
 plt.bar(lesion.keys().tolist(), lesion.tolist(), color=sns.color_palette("husl", 9))
 plt.title('Lesion type')
 plt.xticks(rotation=20)
-plt.savefig('lesion_histogram.png', dpi=300)
+plt.savefig('img/lesion_histogram.png', dpi=300)
 
 plt.figure()
 localization = df_data['localization'].value_counts()
 plt.bar([x[:8] for x in localization.keys().tolist()],localization.tolist(), color=sns.color_palette("husl", 9))
 plt.title('Lesion localization')
 plt.xticks(rotation=30)
-plt.savefig('localization_histogram.png', dpi=300)
+plt.savefig('img/localization_histogram.png', dpi=300)
 
 plt.figure()
 age = df_data['age'].value_counts()
 plt.bar([int(x) for x in age.keys().tolist()], age.tolist(), color=sns.color_palette("husl", 9))
 plt.title('Patient Age')
 plt.xticks(rotation=30)
-plt.savefig('age_histogram.png', dpi=300)
+plt.savefig('img/age_histogram.png', dpi=300)
 
 plt.figure()
 sex = df_data['sex'].value_counts()
 plt.bar(sex.keys().tolist(), sex.tolist(), color=sns.color_palette("husl", 9))
 plt.title("Patient Sex")
 plt.xticks(rotation=30)
-plt.savefig('sex_histogram.png', dpi=300)
+plt.savefig('img/sex_histogram.png', dpi=300)
 
 class HAM10000_Dataset(Dataset):
 
